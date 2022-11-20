@@ -11,7 +11,7 @@ on:
 
 jobs:
 
-  build:
+  myci:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -23,6 +23,15 @@ jobs:
 
     - name: Build
       run: go build -v cmd/aries/main.go
+      
+    - name: golangci-lint
+      uses: golangci/golangci-lint-action@v2
+      with:
+        version: v1.29
 
     - name: Test
       run: go test -v ./...
+      
+  
+ mycd:
+  
