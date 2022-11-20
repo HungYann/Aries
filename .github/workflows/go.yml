@@ -26,13 +26,18 @@ jobs:
       
     - name: Test
       run: go test -v ./...
-
-    - name: releases-action
-      uses: nickatnight/releases-action@v2
+    
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        # Name of branch to release from
-        branch: main
-        name: aries
-        message: "发布编译后文件"
+        tag_name: ${{ github.ref }}
+        release_name: Release ${{ github.ref }}
+        body: TODO New Release.
+        draft: false
+        prerelease: false
+
 
   
