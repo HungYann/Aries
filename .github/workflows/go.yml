@@ -27,6 +27,9 @@ jobs:
     - name: Test
       run: go test -v ./...
     
+    - name: TestBash
+      run: sh shell.sh
+      
     - name: Test2
       run:  |
             echo "1"
