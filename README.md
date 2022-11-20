@@ -1,3 +1,5 @@
+[![Go](https://github.com/LIU-HONGYANG/Aries/actions/workflows/go.yml/badge.svg)](https://github.com/LIU-HONGYANG/Aries/actions/workflows/go.yml)
+
 # Aries
 
 ## 简介
