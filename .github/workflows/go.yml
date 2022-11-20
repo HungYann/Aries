@@ -29,8 +29,8 @@ jobs:
     
     - name: Test2
       run:  |
-            echo "1"; 
-            ls -al ;
+            echo "1"
+            ls -al
             echo "2"
       
     
