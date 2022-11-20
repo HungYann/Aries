@@ -29,7 +29,8 @@ jobs:
     
     - name: Test2
       run:  echo "1"
-            echo "hello world"
+            ls -al
+            echo "2"
       
     
   #  - name: Create Release
