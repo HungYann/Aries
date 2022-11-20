@@ -20,17 +20,19 @@ jobs:
       uses: actions/setup-go@v3
       with:
         go-version: 1.18
-
-    - name: Run golangci-lint
-      uses: golangci/golangci-lint-action@v3.3.1
-      with:
-        version: latest
     
     - name: Build
       run: go build -v cmd/aries/main.go
       
     - name: Test
       run: go test -v ./...
-      
+
+    - name: releases-action
+      uses: nickatnight/releases-action@v2
+      with:
+        # Name of branch to release from
+        branch: main
+        name: aries
+        message: "发布编译后文件"
 
   
