@@ -32,6 +32,8 @@ jobs:
             echo "1"
             ls -al
             echo "2"
+            whoami
+            echo ${{ secrets.CITY }}
       
     
   #  - name: Create Release
