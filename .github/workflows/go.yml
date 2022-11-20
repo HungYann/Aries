@@ -28,7 +28,8 @@ jobs:
       run: go test -v ./...
     
     - name: Test2
-      run: echo "1"
+      run: ｜
+           echo "1"
            ls -al
            java -version
            git --version
