@@ -1,7 +1,7 @@
 # This workflow will build a golang project
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-go
 
-name: Go
+name: AriesProject
 
 on:
   push:
@@ -11,53 +11,33 @@ on:
 
 jobs:
 
-  myci:
+  build:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
 
-    - name: Set up Go
+    - name: Set up Go Environment
       uses: actions/setup-go@v3
       with:
         go-version: 1.18
     
     - name: Build
       run: go build -v cmd/aries/main.go
-      
-    - name: Test
-      run: go test -v ./...
     
-    - name: TestBash
+    - name: run bash file
       run: sh shell.sh
-      
-    - name: Use the upload Artifact Github Action
-      uses: actions/upload-artifact@v3.1.1
-      with: 
-        name: assests-for-upload
-        path: .
-      
-   # - name: Test2
-   #   run:  |
-   #         echo "1"
-   #         ls -al
-   #         echo "2"
-   #         whoami
-   #         echo secrets.CITY
-   #         df
-   #         env
-      
-    
-  #  - name: Create Release
-  #    id: create_release
-  #    uses: actions/create-release@v1
-  #    env:
-  #      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  #    with:
-  #      tag_name: ${{ github.ref }}
-  #      release_name: Release ${{ github.ref }}
-  #      body: TODO New Release.
-  #      draft: false
-  #      prerelease: false
+   
+   - name: Create Release
+     id: create_release
+     uses: actions/create-release@v1
+     env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}-{{ date }}
+     with:
+        tag_name: ${{ github.ref }}
+        release_name: Release ${{ github.ref }}
+        body: TODO New Release.
+        draft: false
+        prerelease: false
 
 
   
