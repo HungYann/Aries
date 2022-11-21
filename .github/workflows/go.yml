@@ -5,9 +5,9 @@ name: AriesProject
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    tags:
+    - 'v*'
+
 
 jobs:
 
@@ -33,8 +33,8 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: ${{ github.ref }} - {{ date }}
-        release_name: ${{ github.ref }} - {{ date }}
+        tag_name: ${{ github.ref }} 
+        release_name: ${{ github.ref }}
         draft: false
         prerelease: false
 
