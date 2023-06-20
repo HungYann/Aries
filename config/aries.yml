@@ -4,6 +4,6 @@ log:
   max-time: 14
   rotate-time: 1
 datasource:
-  msyql: "root:xwj./14@tcp(127.0.0.1:3306)/test?charset=utf8"
+  msyql: "root:password@tcp(127.0.0.1:3306)/test?charset=utf8"
 target:
   endpoint: "127.0.0.1:1235"
