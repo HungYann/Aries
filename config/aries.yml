@@ -1,6 +1,6 @@
 address: 0.0.0.0:888
 log:
-  output-path: "/var/log/achilles/access.log"
+  output-path: "/var/log/aries/access.log"
   max-time: 14
   rotate-time: 1
 datasource:
